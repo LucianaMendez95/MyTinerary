@@ -5,9 +5,9 @@ import Fotoscarousel from "../components/Fotoscarousel"
 
 class Carousel1 extends React.Component {
   state = {
-    slide1: ["Bangkok", "Surat-Thani", "Ayutthaya","Chiang-Mai"],
-    slide2: ["Ho-Chi-Minh", "Ha-Long","Siem-Reap","Kuala-Lumpur"],
-    slide3: ["Manila", "Melbourne","El-Nido","Sydney"]
+    slide1: ["Sydney", "Melbourne", "Brisbane","Cairns"],
+    slide2: ["Adelaida", "Broome","Byron-Bay","Camberra"],
+    slide3: ["Darwin", "Gold-Coast","Perth","Uluru"]
   }
 
   render() {

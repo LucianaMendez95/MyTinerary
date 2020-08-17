@@ -5,7 +5,7 @@ import Dropdown1 from "../components/Dropdown1"
 
 function Header() {
     const fotologo = require("../imagenes/logo.png")
-    const fotobanner = require("../imagenes/banner.jpg")
+    const fotobanner = require("../imagenes/banner1.jpg")
     return (
         <header>
             <div style={{display:`flex`, alignItems: `center`}}>
