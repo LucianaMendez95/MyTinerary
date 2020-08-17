@@ -172,10 +172,17 @@ footer p{
         margin-left: 0vw;
     }
 
+    header div#barraArriba{
+        position: fixed!important; 
+        background-color: rgb(255, 255, 255)!important;
+        
+
+    }
+
     #menuNormal{
         display: inline;
         margin-left: 10vw;
-        margin-top: 8vh;
+        margin-top: 5vh;
         
     }
 
@@ -194,6 +201,8 @@ footer p{
         padding-left: 0vw;
         margin: 0vw;
         padding: 0vw;
+        box-shadow: 0vw 0vw 2vw 0vw rgb(109, 109, 109);
+
         
     }
     
@@ -207,6 +216,7 @@ footer p{
         align-self: center;
         margin-right: 0vw;
         margin-left: 2vw;
+        margin-bottom: 2vh;
         }
 
     body #textoMenu {
@@ -228,7 +238,6 @@ footer p{
             width: 100%;
             margin-top: 0vh;
             margin-right: -2vw;
-
         }
         div#todoelhome #flechaBoton{
             width: 4vw;
@@ -263,10 +272,10 @@ footer p{
         
         
         .divFotoCarousel{
-            width: 30vw;
-            height: 50vh;
+            width: 28vw;
+            height: 48vh;
             overflow: hidden;
-            margin: 3vw;
+            margin: 2vw;
             border-radius: 2vw;
             box-shadow: 0vw 0vw 1vw 0vw black;
         }
@@ -281,7 +290,7 @@ footer p{
         width: 90vw;
         display: flex;
         flex-wrap: wrap;
-        padding-left: 11vw;
+        padding-left: 15vw;
         }
         
         

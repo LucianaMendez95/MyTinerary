@@ -8,7 +8,7 @@ function Header() {
     const fotobanner = require("../imagenes/banner1.jpg")
     return (
         <header>
-            <div style={{display:`flex`, alignItems: `center`}}>
+            <div id="barraArriba" style={{display:`flex`, alignItems: `center`}}>
               <div id="usuarioymenu"><Dropdown1/></div>
               <img id="fotologo" src={fotologo} alt="logo" style={{ marginLeft: `2vw`,}}/>
               <div id="menuHamburguesa" style={{marginLeft: `4vw`, marginTop: `3vh`}}><Menuhamburguesa/></div>
