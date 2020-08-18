@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom"
 
 class Home extends React.Component {
     render() {
-        const fotoflecha = require("../imagenes/flechainicio1.png")
+        const fotoflecha = require("../imagenes/flechainicio3.png")
 
         return (   
             <div id="todoelhome">   

@@ -8,9 +8,10 @@ class Ciudades extends React.Component {
         const fotoflecha = require("../imagenes/flecha.png")
 
         return (   
-            <div>          
-                  <Header/>
-            </div>
+            <div id="todoelhome">   
+            <Header/>       
+            <h3 id="textoMenu"></h3>
+          </div>
         )
     }
 }

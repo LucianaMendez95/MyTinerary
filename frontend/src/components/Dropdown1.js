@@ -5,7 +5,7 @@ const Dropdown1 = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
-  const fotousuario = require("../imagenes/fotousuario.png")
+  const fotousuario = require("../imagenes/usuario.png")
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>

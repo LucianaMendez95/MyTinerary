@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {NavLink} from "react-router-dom"
 
 const Menuhamburguesa = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -11,9 +12,9 @@ const Menuhamburguesa = (props) => {
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle caret style={{backgroundColor: `white`, border: `none`}}><img src={fotoBoton} alt="menu" style={{width: `30%`}}></img></DropdownToggle>
       <DropdownMenu>
-        <DropdownItem>A definir</DropdownItem>
+        <DropdownItem> <NavLink to="/Home">Home</NavLink></DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>A definir</DropdownItem>
+        <DropdownItem><NavLink to="/Ciudades">Ciudades</NavLink></DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );
