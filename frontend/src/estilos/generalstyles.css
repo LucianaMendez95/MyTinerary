@@ -8,18 +8,19 @@
 
 header img#fotologo {
 width: 40%;
-margin-left: 4vw;
+margin-left: 5vw;
 }
 
 header img#fotousuario {
-    width: 10vw;
+    width: 8vw;
     align-self: center;
     outline: none;
+    margin-right: 3vw;
     }
 
 header {
     padding-right: 2vw;
-    padding-left: 8vw;
+    padding-left: 6vw;
 }
 
 #usuarioymenu h2{
@@ -45,16 +46,25 @@ body {
 
 
 div#todoelhome #flechaBoton{
-  width: 6vw;
-  margin-left: 37vw;
-  margin-top: 4vh;
-  margin-bottom: 8vh;
+  width: 15vw;
+  margin-bottom: 1vh;
   padding: 0.2vw;
+
 }
 
 div#todoelhome #flechaBoton:hover{
     box-shadow: 0vw 0vw 2vw 0vw rgb(204, 204, 204);
 } 
+
+ #divflechaboton{
+    margin-left: 33vw;
+    margin-bottom: 7vh;
+    display: flex;
+    margin-top: 5vh;
+
+
+}
+
 
 
 #textoMenu {
@@ -64,8 +74,8 @@ div#todoelhome #flechaBoton:hover{
     padding-right: 3vw;
     padding-left: 3vw;
     text-align: center;
-    border-top: 1px solid black; 
-    padding-top: 5vh;
+    border-top: 1px solid rgb(7, 102, 146); 
+    padding-top: 4vh;
 }
 
 /*Carousel*/
@@ -129,13 +139,14 @@ box-shadow: 0vw 0vw 2vw 0vw rgb(255, 255, 255);
 footer {
     display: flex;
     background-color: black;
-    margin-right: 4vw;
+    margin-right: 12vw;
+    margin-left: 12vw;
 }
 footer div {
     display: flex;
     background-color: black;
     padding: 1vw;
-    margin-left: 26%;
+    margin-left: 27%;
     margin-right: 2vw;
     padding-top: 2.5vh;
     margin-top: 10vh;
@@ -175,6 +186,7 @@ footer p{
     header div#barraArriba{
         position: fixed!important; 
         background-color: rgb(255, 255, 255)!important;
+        z-index: 100;
         
 
     }
@@ -201,7 +213,7 @@ footer p{
         padding-left: 0vw;
         margin: 0vw;
         padding: 0vw;
-        box-shadow: 0vw 0vw 2vw 0vw rgb(109, 109, 109);
+        box-shadow: 0vw 0vw 2vw 0vw rgb(255, 255, 255);
 
         
     }
@@ -239,18 +251,24 @@ footer p{
             margin-top: 0vh;
             margin-right: -2vw;
         }
+
         div#todoelhome #flechaBoton{
-            width: 4vw;
-            margin-left: 50vw;
-            margin-top: 2vh;
-            margin-bottom: 12vh;
+            margin-top: 4vh;
+            margin-bottom: 2vh;
             padding: 0.2vw;
-        }
-        
-        div#todoelhome #flechaBoton:hover{
-            box-shadow: 0vw 0vw 2vw 0vw rgb(204, 204, 204);
-        } 
-        
+            margin-left: 5vw;
+          }
+          
+          div#todoelhome #flechaBoton:hover{
+              box-shadow: 0vw 0vw 2vw 0vw rgb(204, 204, 204);
+          } 
+          
+           #divflechaboton{
+              margin-left: 40vw;
+              margin-bottom: 7vh;
+          
+          }
+       
         
         #textoMenu {
             font-size: 90%;
@@ -266,7 +284,7 @@ footer p{
         /*Carousel*/
         
         #carouselstyle{
-        margin-right: 4vw;
+        margin-right: vw;
         margin-left: 2vw;
         }
         
@@ -290,7 +308,7 @@ footer p{
         width: 90vw;
         display: flex;
         flex-wrap: wrap;
-        padding-left: 15vw;
+        padding-left: 17vw;
         }
         
         
@@ -335,6 +353,7 @@ footer p{
             display: flex;
             background-color: black;
             margin-right: 0vw;
+            margin-left: 0vw;
         }
         footer div {
             display: flex;
@@ -360,6 +379,15 @@ footer p{
             text-align: center;
             margin-top: 1vh;
         }
+
+       header a.active {
+           font-weight: bold;
+           text-decoration: underline;
+    }
+    header a:hover{
+        font-weight: bold;
+
+    }
          
       
 }

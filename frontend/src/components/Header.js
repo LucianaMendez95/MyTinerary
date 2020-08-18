@@ -1,6 +1,8 @@
 import React from 'react';
 import Menuhamburguesa from "../components/Menuhamburguesa"
 import Dropdown1 from "../components/Dropdown1"
+import {NavLink} from "react-router-dom"
+
 
 
 function Header() {
@@ -11,10 +13,10 @@ function Header() {
             <div id="barraArriba" style={{display:`flex`, alignItems: `center`}}>
               <div id="usuarioymenu"><Dropdown1/></div>
               <img id="fotologo" src={fotologo} alt="logo" style={{ marginLeft: `2vw`,}}/>
-              <div id="menuHamburguesa" style={{marginLeft: `4vw`, marginTop: `3vh`}}><Menuhamburguesa/></div>
+              <div id="menuHamburguesa" style={{marginLeft: `4vw`, marginTop: `2vh`}}><Menuhamburguesa/></div>
               <div id="menuNormal">
-                  <a href="https://www.google.com.ar/?gws_rd=ssl">A definir</a>
-                  <a href="https://www.google.com.ar/?gws_rd=ssl">A definir</a>
+                  <NavLink to="/Home">Home</NavLink>
+                  <NavLink to="/Ciudades">Ciudades</NavLink>
               </div>
             </div>
             <div id="fotoHeader"><img src={fotobanner} alt="banner"></img></div>
