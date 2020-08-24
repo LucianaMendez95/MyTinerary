@@ -3,14 +3,13 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Ciudades from "../src/pages/Ciudades";
 import "../src/estilos/generalstyles.css";
-import "../src/estilos/generalstyles.css";
+import "../src/estilos/ciudades.css";
 import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom"
 
 class App extends React.Component {
   render (){
 
     return (
-      <>
       <BrowserRouter>
        <Switch>
          <Route exact path="/Home" component={Home}/>
@@ -19,9 +18,7 @@ class App extends React.Component {
         </Switch>
         <Footer/>
       </BrowserRouter>
-      </>
-    );
-
+    )
   }
 }
 

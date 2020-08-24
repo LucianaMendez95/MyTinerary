@@ -3,11 +3,8 @@ import Menuhamburguesa from "../components/Menuhamburguesa"
 import Dropdown1 from "../components/Dropdown1"
 import {NavLink} from "react-router-dom"
 
-
-
 function Header() {
     const fotologo = require("../imagenes/logo.png")
-    const fotobanner = require("../imagenes/banner1.jpg")
     return (
         <header>
             <div id="barraArriba" style={{display:`flex`, alignItems: `center`}}>
@@ -19,10 +16,7 @@ function Header() {
                   <NavLink to="/Ciudades">Ciudades</NavLink>
               </div>
             </div>
-            <div id="fotoHeader"><img src={fotobanner} alt="banner"></img></div>
-
         </header>
     )
 }
-
 export default Header

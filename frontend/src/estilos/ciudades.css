@@ -1,0 +1,96 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#ciudd{
+    padding: 1vh;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 17px;
+    padding-left: 1.5vw ;
+    padding-right: 1.5vw;
+}
+#todasLasCiudades{
+    width: 85vw;
+    margin: 10vh auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divFotoCiudad:hover{
+    box-shadow: 0vw 0vw 2vw 0vw black;
+
+}
+
+.divFotoCiudad{
+    width: 80vw;
+    height: 40vh;
+    overflow: hidden;
+    margin: 3vh auto;
+    border-radius: 2vw;
+    box-shadow: 0vw 0vw 1vw 0vw black;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 2vw;
+}
+
+.divFotoCiudad:hover{
+    box-shadow: 0vw 0vw 2vw 0vw black;
+
+}
+
+#notFound{
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+}
+
+#notFound img {
+width: 40vw;
+
+}
+
+
+/*Diseño pantalla grande*/
+
+@media only screen and (min-width: 780px){
+    #divenblanco{
+        display: block!important;
+        border-bottom: 1px solid rgb(7, 102, 146);
+        margin-right: 3vw;
+        margin-left: 3vw;
+        height: 15vh;
+    }
+
+    #todasLasCiudades{
+        width: 85vw;
+        margin: 10vh auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .divFotoCiudad:hover{
+        box-shadow: 0vw 0vw 2vw 0vw black;
+    
+    }
+    
+    .divFotoCiudad{
+        width: 40vw;
+        height: 60vh;
+        overflow: hidden;
+        margin: 3vh auto;
+        border-radius: 2vw;
+        box-shadow: 0vw 0vw 1vw 0vw black;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .divFotoCiudad:hover{
+        box-shadow: 0vw 0vw 2vw 0vw black;
+    
+    }
+
+}

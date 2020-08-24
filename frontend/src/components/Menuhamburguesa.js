@@ -10,7 +10,7 @@ const Menuhamburguesa = (props) => {
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret style={{backgroundColor: `white`, border: `none`}}><img src={fotoBoton} alt="menu" style={{width: `30%`}}></img></DropdownToggle>
+      <DropdownToggle caret style={{backgroundColor: `white`, border: `none`}}><img src={fotoBoton} alt="menu" style={{width: `26%`}}></img></DropdownToggle>
       <DropdownMenu>
         <DropdownItem> <NavLink to="/Home">Home</NavLink></DropdownItem>
         <DropdownItem divider />
