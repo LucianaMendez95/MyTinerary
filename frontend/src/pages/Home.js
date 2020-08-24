@@ -5,10 +5,8 @@ import {NavLink} from "react-router-dom"
 
 
 class Home extends React.Component {
-
     render() {
         const fotobanner = require("../imagenes/banner1.jpg")
-
         const fotoflecha = require("../imagenes/flechainicio3.png")
 
         return (   
