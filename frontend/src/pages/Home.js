@@ -15,7 +15,7 @@ class Home extends React.Component {
               <div id="fotoHeader"><img src={fotobanner} alt="banner"></img></div>
               <h3 id="textoMenu">Find your perfect trip, designed by insiders who know and love their cities.</h3>
               <div id="divflechaboton">
-                 <NavLink to="Ciudades"><img id="flechaBoton" src={fotoflecha} alt="flecha"></img></NavLink>    
+                 <NavLink to="ciudades"><img id="flechaBoton" src={fotoflecha} alt="flecha"></img></NavLink>    
               </div>
               <div id="carouselstyle"><Carousel1/></div>
             </div>

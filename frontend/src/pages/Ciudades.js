@@ -2,6 +2,8 @@ import React from 'react';
 import Header from "../components/Header";
 import axios from 'axios';
 import FotoCiudad from "../components/FotoCiudad"
+import {NavLink} from "react-router-dom"
+
 
 
 class Ciudades extends React.Component {
@@ -34,24 +36,26 @@ class Ciudades extends React.Component {
         const notFound = require("../imagenes/notfound.jpg")
         const mensaje = () => {
             if (this.state.listaDeCiudades.length===0) {
-                return <div id="notFound"><img src={notFound}/></div>
+                return <div id="notFound"><img alt="city not found" src={notFound}/></div>
             }
         }
 
         return (   
             <div id="todoelhome">   
               <Header/>
-              <div id="divenblanco"style={{display:`none`}}></div>
+              <div className="divenblanco"style={{display:`none`}}></div>
               <h3 id="textoMenu"> </h3>
               <div style={{display: `flex`, justifyContent:`center`}}>
                  <input onChange={this.capturarValor} type="text" placeholder="Search the perfect city for you" name="ciudad" id="ciudd"></input>
               </div>
               {mensaje()}
-              <div id="todasLasCiudades">
-                  {this.state.listaDeCiudades.map(ciudad =>{
-                    return <FotoCiudad ciudad={ciudad}/>
-                  })}
-              </div>
+              
+                 <div id="todasLasCiudades">
+                     {this.state.listaDeCiudades.map(ciudad =>{
+                       return <NavLink to={`/ciudad/${ciudad._id}`}><FotoCiudad ciudad={ciudad}/> </NavLink>
+                      })}
+                 </div>
+             
 
           </div>
         )

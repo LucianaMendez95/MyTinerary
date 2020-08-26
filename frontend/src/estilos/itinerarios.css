@@ -1,0 +1,82 @@
+
+.todoTinerary{
+    width: 80vw;
+    margin-left: 2vw;
+    margin-bottom: 4vh;
+    margin-top: 2vh;
+    display: flex;
+    background-color: rgb(7, 102, 146);
+    box-shadow: 0vw 0vw 1vw 0.1vw black;
+    color: white;
+    border-radius: 1vw;
+
+}
+
+
+
+#imagenTinerary{
+    align-self: center;
+    margin: auto 5vw;
+    border-radius: 100%;
+    display: flex;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 10vh;
+    box-shadow: 0vw 0vw 1vw 0.1vw black;
+
+}
+
+
+
+#infoTinerary{
+margin: 4vh 6vw;
+
+}
+
+#ratingDurationPriceTinerary{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+}
+
+#ratingDurationPriceTinerary div {
+    margin-right: 2vw;
+
+}
+
+
+#tituloHashtagsTinerary{
+    margin-right: 2vw;
+}
+
+#tituloHashtagsTinerary div{
+    display: block;
+    margin-bottom: 6vh;
+}
+
+#tituloTinerary{
+    font-weight: bold;
+    font-style: italic;
+}
+
+#hashtagsTinerary p{
+margin-right: 1vw;
+display: inline;
+font-size: 2vh;
+}
+
+
+.todoTinerary button{
+border: 1px solid rgb(255, 255, 255);
+background-color: rgb(7, 102, 146);
+color: white;
+padding: 0vh 1vw;
+}
+
+.todoTinerary button:hover{
+    box-shadow: 0vw 0vw 1vw 0.1vw white;
+
+}
+
