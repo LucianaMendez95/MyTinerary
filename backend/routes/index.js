@@ -19,7 +19,7 @@ rutas.route('/itinerarios/:id')
     .get(itinerariosControlador.listaItinerarios)
 
 rutas.route('/itinerarios')
-.post(itinerariosControlador.nuevoItinerario)
+    .post(itinerariosControlador.nuevoItinerario)
 
 rutas.route('/activities')
     .get(activityControlador.listaActivities)

@@ -12,8 +12,8 @@ function Header() {
               <img id="fotologo" src={fotologo} alt="logo" style={{ marginLeft: `2vw`,}}/>
               <div id="menuHamburguesa" style={{marginLeft: `4vw`, marginTop: `2vh`}}><Menuhamburguesa/></div>
               <div id="menuNormal">
-                  <NavLink to="/home">Home</NavLink>
-                  <NavLink to="/ciudades">Ciudades</NavLink>
+                <NavLink to="/home">Home</NavLink>
+                <NavLink to="/ciudades">Ciudades</NavLink>
               </div>
             </div>
         </header>

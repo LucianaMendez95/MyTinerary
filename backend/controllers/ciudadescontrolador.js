@@ -18,9 +18,9 @@ const ciudadesControlador ={
         //validar los datos 
         //le pido a la base de datos que grabe el nuevo invitado
         const nuevaciudad = new Ciudad({
-            ciudad: ciudad,
-            pais: pais,
-            fotoCiudad: fotoCiudad
+            ciudad,
+            pais,
+            fotoCiudad
         })
         nuevaciudad.save()
         .then(user =>{

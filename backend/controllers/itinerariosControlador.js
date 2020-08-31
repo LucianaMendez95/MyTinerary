@@ -15,14 +15,14 @@ const itinerariosControlador ={
         const{hashtag, title, profilePic, rating, duration, price, cityId, comentarios} = req.body
 
         const nuevoItinerario = new itinerario({
-            hashtag: hashtag,
-            title: title,
-            profilePic: profilePic,
-            rating: rating,
-            duration: duration,
-            price: price,
-            cityId: cityId,
-            comentarios: comentarios
+            hashtag,
+            title,
+            profilePic,
+            rating,
+            duration,
+            price,
+            cityId,
+            comentarios
         })
 
         nuevoItinerario.save()

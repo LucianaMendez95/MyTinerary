@@ -57,9 +57,9 @@ class Ciudad extends React.Component {
               </div>
              
               <div id="homeyflecha">
-                  <div style={{width:"25vw"}}>
-                     <NavLink to="/ciudades"><img alt="home" id="flechaVolver" src={flechaVolver}></img></NavLink>
-                     <NavLink to="/home"><img alt="volver" id="homeVolver" src={home}></img></NavLink>
+                  <div id="divhomeyflecha" style={{width:"25vw"}}>
+                     <div id="divFlechaVolver"><NavLink to="/ciudades"><img alt="home" id="flechaVolver" src={flechaVolver}></img></NavLink></div>
+                     <div id="divHomeVolver"> <NavLink to="/home"><img alt="volver" id="homeVolver" src={home}></img></NavLink></div>
                   </div>
               </div>
           </div>

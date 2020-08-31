@@ -34,6 +34,11 @@ class Ciudades extends React.Component {
 
     render() {
         const notFound = require("../imagenes/notfound.jpg")
+
+        if(this.state.ciudades === null){
+            return null
+        }
+
         const mensaje = () => {
             if (this.state.listaDeCiudades.length===0) {
                 return <div id="notFound"><img alt="city not found" src={notFound}/></div>
@@ -52,7 +57,7 @@ class Ciudades extends React.Component {
               
                  <div id="todasLasCiudades">
                      {this.state.listaDeCiudades.map(ciudad =>{
-                       return <NavLink to={`/ciudad/${ciudad._id}`}><FotoCiudad ciudad={ciudad}/> </NavLink>
+                       return <NavLink to={`/ciudad/${ciudad._id}`} href="#divenblanco"><FotoCiudad ciudad={ciudad}/></NavLink>
                       })}
                  </div>
              
