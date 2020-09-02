@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import axios from 'axios';
 import Itinerario from '../components/Itinerario';
 import FotoCiudad from "../components/FotoCiudad"
+import loading from "../imagenes/loading.gif"
 
 
 
@@ -12,7 +13,7 @@ class Ciudad extends React.Component {
 
     state = {
         ciudad: {},
-        itinerarios: []
+        itinerarios:null,
     }
 
     async componentDidMount() {
@@ -21,15 +22,19 @@ class Ciudad extends React.Component {
         const ciudad = await response.data.ciudadBuscada
         const responseItinerario = await axios.get(`http://127.0.0.1:4000/api/itinerarios/${idABuscar}`)
         const itinerarios = await responseItinerario.data.itinerarios
+
         this.setState({
             ciudad: ciudad,
-            itinerarios: itinerarios
+            itinerarios: itinerarios,
         })
         
     }
-
+   
 
     render() {
+        if(this.state.itinerarios === null){
+            return <img alt="loading" src={loading} id="loading"/>
+        }
         const home = require("../imagenes/home.png")
         const flechaVolver = require("../imagenes/flechaVolver.png")
         

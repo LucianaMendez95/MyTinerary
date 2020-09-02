@@ -37,7 +37,7 @@
 
 
 #infoTinerary{
-margin: 4vh 6vw;
+margin: 4vh 5vw;
 
 }
 
@@ -105,6 +105,39 @@ margin-top: 2vh;
     box-shadow: 0vw 0vw 1vw 0.1vw white;
 
 }
+
+/*Actividades*/
+
+#divActivity{
+    display: flex;
+    margin: 4vh 2vw;
+    align-items: center;
+    border-top: 1px solid white;
+    padding-top: 3vh;
+
+}
+
+#infoActivity{
+    width: 70%;
+    margin-left: 4vw;
+}
+
+#infoActivity h4 {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#infoActivity p {
+    font-size: 90%;
+}
+
+#divActivity #fotoActividad{
+background-size: cover;
+background-position: center;
+width: 14vh;
+height: 14vh;
+}
+
 
 
 @media only screen and (max-width: 780px){

@@ -1,12 +1,11 @@
 import React from 'react';
-import Activities from "../components/Activities"
+import Activities from "./Activities"
 
 
 class Itinerario extends React.Component {
     state = {
         viewMore: false
     }
-
   
 
     render() {
@@ -27,6 +26,7 @@ class Itinerario extends React.Component {
         billetes(this.props.itinerario.price, billetesarray)
         billetes(billeteVacioCuenta, billeteVacioArray)
 
+       
 
         const verMas = () => {
             this.setState({viewMore: !this.state.viewMore})
@@ -55,7 +55,7 @@ class Itinerario extends React.Component {
                             </div>
                          </div>
                       </div>
-                      {this.state.viewMore && <div id="verMas"><Activities/></div>}
+                      {this.state.viewMore && <div id="verMas"><Activities idItinerario={this.props.itinerario._id}/></div>}
                       <div id="divBoton"> <button onClick={verMas}>{this.state.viewMore ? "View less" : "View more"}</button></div>
 
                   </div>

@@ -6,8 +6,10 @@ import Ciudad from "../src/pages/Ciudad";
 import "../src/estilos/generalstyles.css";
 import "../src/estilos/ciudades.css";
 import "../src/estilos/itinerarios.css";
-
+import "../src/estilos/registroLogIn.css";
 import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom"
+import Register from './pages/Register';
+import LogIn from './pages/LogIn';
 
 class App extends React.Component {
   render (){
@@ -18,6 +20,8 @@ class App extends React.Component {
          <Route exact path="/home" component={Home}/>
          <Route path="/ciudades" component={Ciudades}/>
          <Route path="/ciudad/:id" component={Ciudad}/>
+         <Route path="/register" component={Register}/>
+         <Route path="/logIn" component={LogIn}/>
          <Redirect to="/home"/>
         </Switch>
         <Footer/>

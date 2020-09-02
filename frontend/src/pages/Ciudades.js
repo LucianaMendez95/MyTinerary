@@ -3,12 +3,13 @@ import Header from "../components/Header";
 import axios from 'axios';
 import FotoCiudad from "../components/FotoCiudad"
 import {NavLink} from "react-router-dom"
+import loading from "../imagenes/loading.gif"
 
 
 
 class Ciudades extends React.Component {
     state = {
-        listaDeCiudades: [],
+        listaDeCiudades: null,
         ciudadesFiltradas: []
     }
 
@@ -35,8 +36,8 @@ class Ciudades extends React.Component {
     render() {
         const notFound = require("../imagenes/notfound.jpg")
 
-        if(this.state.ciudades === null){
-            return null
+        if(this.state.listaDeCiudades === null){
+            return <img alt="loading" src={loading} id="loading"/>
         }
 
         const mensaje = () => {

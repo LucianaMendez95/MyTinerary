@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {NavLink} from "react-router-dom"
+
 
 const Dropdown1 = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -13,8 +15,8 @@ const Dropdown1 = (props) => {
          <img id="fotousuario" src={fotousuario} alt="fotousuario"/>
         </DropdownToggle>
        <DropdownMenu>
-          <DropdownItem header>Login</DropdownItem>
-          <DropdownItem>Register</DropdownItem>
+          <NavLink to="/logIn"><DropdownItem>Login</DropdownItem></NavLink>
+          <NavLink to="/register"><DropdownItem>Register</DropdownItem></NavLink>
        </DropdownMenu>
     </Dropdown>
   );

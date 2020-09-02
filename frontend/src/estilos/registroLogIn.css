@@ -1,0 +1,32 @@
+
+#divFormulario{
+    display: flex;
+    justify-content: center;
+
+}
+
+#divFormulario form{
+padding: 2vh auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 1px solid black;
+padding: 2vh 2vw;
+}
+
+#divFormulario h3{
+    margin-bottom: 5vh;
+}
+
+#divFormulario div{
+    margin-bottom: 2vh;
+}
+
+#divFormulario label{
+    margin-right: 2vw;
+}
+#divFormulario input{
+    width: 50vw;
+
+}

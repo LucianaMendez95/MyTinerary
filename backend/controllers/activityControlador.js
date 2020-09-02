@@ -2,21 +2,21 @@ const Activity = require("../models/Activity")
 
 const ActivitiesControlador ={
     listaActivities: async (req,res) => {
-       const lista = await Activity.find()
+       const lista = await Activity.find({itineraryId: req.params.id})
         res.json({
             success:true,
             Activities: lista
         })
     },
 
-  
-
     nuevoActivity: (req,res) => {
-        const{Activities, cityId} = req.body
+        const{titulo, imagenActividad, descripcion, itineraryId} = req.body
 
-        const nuevoItinerario = new Activity({
-            Activities,
-            cityId
+        const nuevoActivity = new Activity({
+            titulo,
+            imagenActividad,
+            descripcion,
+            itineraryId
         })
 
         nuevoActivity.save()
@@ -28,6 +28,7 @@ const ActivitiesControlador ={
         })
        
     }
+
 }
 
 module.exports = ActivitiesControlador

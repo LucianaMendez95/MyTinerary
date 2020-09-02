@@ -22,7 +22,10 @@ rutas.route('/itinerarios')
     .post(itinerariosControlador.nuevoItinerario)
 
 rutas.route('/activities')
-    .get(activityControlador.listaActivities)
     .post(activityControlador.nuevoActivity)
+
+rutas.route('/activities/:id')
+.get(activityControlador.listaActivities)
+
 
 module.exports = rutas
