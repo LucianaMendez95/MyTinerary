@@ -9,15 +9,11 @@
     color: white;
     border-radius: 1vw;
     border: 2px solid white;
-
 }
 
 .TinerarySinVerMas{
     display: flex;
-
 }
-
-
 
 #imagenTinerary{
     align-self: center;
@@ -31,14 +27,20 @@
     height: 10vh;
     box-shadow: 0vw 0vw 1vw 0.1vw black;
     border: 1px solid white;
-
 }
 
-
+div.fotoHeader{
+    height: 8vh;
+    margin: 0vh 1vw!important;
+    margin-bottom: -3vh!important;
+    margin-top: 1vh!important;
+    margin-right: 2vw!important;
+    align-self: center!important;
+    margin-left: 2vw!important;
+}
 
 #infoTinerary{
 margin: 4vh 5vw;
-
 }
 
 #ratingDurationPriceTinerary{
@@ -60,14 +62,12 @@ div#rating img:hover {
     width: 3vw;
     margin-left: -0.4vw;
     cursor: pointer;
-  
 }
+
 div#rating img {
     width: 2.5vw;
     margin-right: 0.4vw;
 }
-
-
 
 #tituloHashtagsTinerary{
     margin-right: 2vw;
@@ -78,8 +78,6 @@ div#rating img {
     margin-bottom: 4vh;
     margin-top: -3vh;
 }
-
-
 
 #tituloTinerary{
     font-weight: bold;

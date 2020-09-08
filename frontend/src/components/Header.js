@@ -2,8 +2,10 @@ import React from 'react';
 import Menuhamburguesa from "../components/Menuhamburguesa"
 import Dropdown1 from "../components/Dropdown1"
 import {NavLink} from "react-router-dom"
+import usuariosActions from '../redux/actions/usuariosActions';
+import {connect} from 'react-redux'
 
-function Header() {
+const Header = (props) => {
     const fotologo = require("../imagenes/logo.png")
     return (
         <header>
@@ -19,4 +21,12 @@ function Header() {
         </header>
     )
 }
-export default Header
+
+const mapStateToProps = state => {
+  return{
+    usuarioLogueado: state.usuarios.usuario,
+    imagenLogueado: state.usuarios.foto
+  }
+}
+
+export default connect(mapStateToProps) (Header)

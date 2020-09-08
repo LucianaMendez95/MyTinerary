@@ -5,6 +5,8 @@ import axios from 'axios';
 import Itinerario from '../components/Itinerario';
 import FotoCiudad from "../components/FotoCiudad"
 import loading from "../imagenes/loading.gif"
+import ciudadesActions from '../redux/actions/ciudadesActions';
+import {connect} from 'react-redux'
 
 
 
@@ -12,19 +14,17 @@ import loading from "../imagenes/loading.gif"
 class Ciudad extends React.Component {
 
     state = {
-        ciudad: {},
         itinerarios:null,
     }
 
     async componentDidMount() {
         const idABuscar = this.props.match.params.id
-        const response = await axios.get(`http://127.0.0.1:4000/api/ciudad/${idABuscar}`)
-        const ciudad = await response.data.ciudadBuscada
+        this.props.getcity(idABuscar)
+
         const responseItinerario = await axios.get(`http://127.0.0.1:4000/api/itinerarios/${idABuscar}`)
         const itinerarios = await responseItinerario.data.itinerarios
 
         this.setState({
-            ciudad: ciudad,
             itinerarios: itinerarios,
         })
         
@@ -54,7 +54,7 @@ class Ciudad extends React.Component {
               <div className="divenblanco"style={{display:`none`}}></div>
               <h3 id="textoMenu"> </h3>
               <div id="componenteCiudad">
-                  <FotoCiudad ciudad={this.state.ciudad}/>
+                  <FotoCiudad ciudad={this.props.city}/>
                      {mensaje()}
                      {this.state.itinerarios.map(itinerario =>{
                          return <Itinerario itinerario={itinerario}/>
@@ -71,4 +71,15 @@ class Ciudad extends React.Component {
         )
     }
 }
-export default Ciudad
+
+    const mapStateToProps = state => {
+        return{
+            city: state.ciudades.city,
+        }
+    }
+
+    const mapDispatchToProps = {
+        getcity: ciudadesActions.getcity,
+     }
+
+export default connect(mapStateToProps, mapDispatchToProps) (Ciudad)

@@ -2,9 +2,16 @@ import React from 'react';
 import Header from "../components/Header";
 import Carousel1 from "../components/Carousel1"
 import {NavLink} from "react-router-dom"
+import ciudadesActions from '../redux/actions/ciudadesActions';
+import {connect} from 'react-redux'
 
 
 class Home extends React.Component {
+
+    async componentDidMount() {
+        this.props.getcities()
+      }
+
     render() {
         const fotobanner = require("../imagenes/banner1.jpg")
         const fotoflecha = require("../imagenes/flechainicio3.png")
@@ -23,4 +30,9 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+
+const mapDispatchToProps = {
+getcities: ciudadesActions.getcities
+}
+
+export default connect(null, mapDispatchToProps) (Home)

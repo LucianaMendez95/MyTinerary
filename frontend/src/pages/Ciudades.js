@@ -1,34 +1,24 @@
 import React from 'react';
 import Header from "../components/Header";
-import axios from 'axios';
 import FotoCiudad from "../components/FotoCiudad"
 import {NavLink} from "react-router-dom"
 import loading from "../imagenes/loading.gif"
+import ciudadesActions from '../redux/actions/ciudadesActions';
+import {connect} from 'react-redux'
+
 
 
 
 class Ciudades extends React.Component {
-    state = {
-        listaDeCiudades: null,
-        ciudadesFiltradas: []
-    }
-
+   
     async componentDidMount() {
-        const response = await axios.get('http://127.0.0.1:4000/api/ciudades')
-        const lista = await response.data.ciudades
-        this.setState({
-            listaDeCiudades: lista,
-            ciudadesFiltradas: lista
-        })
+      this.props.getcities()
+       
     }
 
     capturarValor = e =>{
     const valorDeseado = e.target.value.toLowerCase().trim()
-    const filtrados = this.state.ciudadesFiltradas.filter(ciudad => ciudad.ciudad.toLowerCase().indexOf(valorDeseado) === 0) 
-    
-    this.setState({
-        listaDeCiudades: filtrados
-    })
+    this.props.ciudadesfiltradas(valorDeseado)
     }
 
 
@@ -36,12 +26,12 @@ class Ciudades extends React.Component {
     render() {
         const notFound = require("../imagenes/notfound.jpg")
 
-        if(this.state.listaDeCiudades === null){
+        if(this.props.ciudades === null){
             return <img alt="loading" src={loading} id="loading"/>
         }
 
         const mensaje = () => {
-            if (this.state.listaDeCiudades.length===0) {
+            if (this.props.ciudadesFiltradas.length===0) {
                 return <div id="notFound"><img alt="city not found" src={notFound}/></div>
             }
         }
@@ -57,7 +47,7 @@ class Ciudades extends React.Component {
               {mensaje()}
               
                  <div id="todasLasCiudades">
-                     {this.state.listaDeCiudades.map(ciudad =>{
+                     {this.props.ciudadesFiltradas.map(ciudad =>{
                        return <NavLink to={`/ciudad/${ciudad._id}`} href="#divenblanco"><FotoCiudad ciudad={ciudad}/></NavLink>
                       })}
                  </div>
@@ -67,4 +57,18 @@ class Ciudades extends React.Component {
         )
     }
 }
-export default Ciudades
+    const mapStateToProps = state => {
+        return{
+            ciudades: state.ciudades.ciudades,
+            ciudadesFiltradas: state.ciudades.ciudadesFiltradas
+
+        }
+    }
+
+   const mapDispatchToProps = {
+    getcities: ciudadesActions.getcities,
+    ciudadesfiltradas: ciudadesActions.filtrarCiudades
+
+   }
+
+export default connect(mapStateToProps, mapDispatchToProps) (Ciudades)
