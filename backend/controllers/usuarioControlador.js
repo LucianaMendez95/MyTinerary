@@ -1,5 +1,6 @@
 const Usuario = require("../models/Usuario")
 const bcryptjs = require ('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const usuarioControlador ={
 
@@ -10,7 +11,7 @@ const usuarioControlador ={
         const passwordhash = bcryptjs.hashSync(password, 10)
         const userExists = await Usuario.findOne({usuario: usuario})
         if(userExists){
-        res.json({success: false, error: "The username already exists"})
+        res.json({success: false, error: "Please log in"})
 
         }else{
             const newuser = new Usuario({
@@ -24,22 +25,17 @@ const usuarioControlador ={
             })
     
             newuser.save()
-            .then(user =>{
-                res.json({success: true, user: user})
-            })
-            .catch(error => {
-                res.json({success: false, error: error})
-            })
+            var user = await newuser.save()
+            jwt.sign({...newuser}, proccess.env.SECRETORKEY, {}, (error, token) =>{
+                if(error){
+                    res.json({success: false, error:"An error has occurred"})
+                }else {
+                    res.json({success:true, token, usuario:user.usuario, foto:user.foto})
+                }
+           })
+           
         }
        
-    },
-
-    validarDatos: (req,res,next) => {
-     if(req.body.nombre === ""){
-       res.json({success: false, mensaje:"no se pudo grabr"})
-     }else {
-      next()
-     }
     },
 
 
@@ -53,10 +49,23 @@ const usuarioControlador ={
             if(!passwordCorrect){
                 res.json({success: false, error: "Username and/or password is incorrect"})
             }else{
-                res.json({success: true, user:userExists})
+                //generar token
+                jwt.sign({...userExists}, process.env.SECRETORKEY, {}, (error, token)=>{
+                    if(error){
+                        res.json({success: false, error:"An error has occurred"})
+                    }else {
+                        res.json({success:true, token, usuario:userExists.usuario, foto:userExists.foto})
+                    }
+                })
             }
         }
 
+    },
+
+
+    verificarToken: (req, res)=> {
+        const {usuario, foto} = req.user
+        res.json({success: true, usuario, foto})
     }
     
     }

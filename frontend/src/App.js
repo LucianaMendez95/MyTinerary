@@ -10,11 +10,20 @@ import "../src/estilos/registroLogIn.css";
 import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom"
 import Register from './pages/Register';
 import LogIn from './pages/LogIn';
+import {connect} from 'react-redux'
+import usuariosActions from '../src/redux/actions/usuariosActions';
 
 class App extends React.Component {
   render (){
+    if (localStorage.getItem('token') && this.props.tokenLogueado===""){
+      (this.props.forcedLogIn(localStorage.getItem('token')))
+
+    }
+console.log(this.props)
+    
 
     return (
+      
       <BrowserRouter>
        <Switch>
          <Route exact path="/home" component={Home}/>
@@ -30,4 +39,14 @@ class App extends React.Component {
   }
 }
 
-export default App
+const mapDispatchToProps = {
+  forcedLogIn: usuariosActions.forcedLogIn
+}
+
+const mapStateToProps = state => {
+  return{
+    tokenLogueado: state.usuarios.token  
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (App)

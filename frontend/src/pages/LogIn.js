@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Header from "../components/Header";
 import usuariosActions from '../redux/actions/usuariosActions';
 import {connect} from 'react-redux'
+import { GoogleLogin } from 'react-google-login';
+
 
 
 const LogIn = props => {
@@ -29,6 +31,14 @@ const LogIn = props => {
            props.history.push("/home")  
         }
     },[props.success]) 
+
+    const responseGoogle = respuesta => {
+        props.loguearUsuario({
+            usuario:respuesta.profileObj.email,
+            password:respuesta.profileObj.googleId})
+        props.history.push("/home")  
+    }
+
     
    
     
@@ -42,6 +52,15 @@ const LogIn = props => {
               <div id="divFormulario">
                   <form>
                      <h3>Log In form</h3>
+
+                     <GoogleLogin id="GoogleLogin"
+                        clientId="83311303903-d8eviki4j9rvmabuc0ceg0c5im70b2ab.apps.googleusercontent.com"
+                        buttonText="Crear cuenta con google"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />
+
                      <div id="divUsuario">
                          <input onChange={leerImput} type="text" id="usuario" name="usuario" placeholder="Write your username here"></input>
                      </div>

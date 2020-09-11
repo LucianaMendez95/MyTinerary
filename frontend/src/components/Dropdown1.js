@@ -16,14 +16,16 @@ const Dropdown1 = (props) => {
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-       <DropdownToggle caret style= {{backgroundColor: `white`, border: `0px solid white`}}>
-       {!props.usuarioLogueado
-         ? (<img id="fotousuario" src={fotousuario} alt="fotousuario"/>) 
-         : ( <div id="imagenTinerary" className="fotoHeader" style={{ backgroundImage: `url(${props.imagenLogueado})`, width:"6vw", height:"6vw"}}></div>)
-         }
-        </DropdownToggle>
+       <DropdownToggle caret style= {{backgroundColor: `white`, border: `0px solid white`}}>        
+        {!props.tokenLogueado
+        ? <img id="fotousuario" src={fotousuario} alt="fotousuario"/>
+        :<div id="imagenTinerary" className="fotoHeader" style={{ backgroundImage: `url(${props.imagenLogueado})`, width:"6vw", height:"6vw"}}></div>
+        }
+     </DropdownToggle>
 
-        {!props.usuarioLogueado
+
+
+        {!props.tokenLogueado
         ? (<>
          <DropdownMenu>
             <NavLink to="/logIn"><DropdownItem>Login</DropdownItem></NavLink>
@@ -42,13 +44,15 @@ const Dropdown1 = (props) => {
 }
 
 const mapDispatchToProps = {
-  desloguearUsuario: usuariosActions.desloguearUsuario
+  desloguearUsuario: usuariosActions.desloguearUsuario,
+  forcedLogIn: usuariosActions.forcedLogIn
 }
 
 const mapStateToProps = state => {
   return{
     usuarioLogueado: state.usuarios.usuario,
-    imagenLogueado: state.usuarios.foto
+    imagenLogueado: state.usuarios.foto,
+    tokenLogueado: state.usuarios.token
   }
 }
 

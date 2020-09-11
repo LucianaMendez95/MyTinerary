@@ -97,6 +97,7 @@ background-color: rgb(7, 102, 146);
 color: white;
 padding: 0vh 1vw;
 margin-top: 2vh;
+margin-left: 5vw;
 }
 
 .todoTinerary button:hover{
@@ -108,7 +109,7 @@ margin-top: 2vh;
 
 #divActivity{
     display: flex;
-    margin: 4vh 2vw;
+    margin: 4vh 5vw;
     align-items: center;
     border-top: 1px solid white;
     padding-top: 3vh;
@@ -135,6 +136,81 @@ background-position: center;
 width: 14vh;
 height: 14vh;
 }
+
+/*comentarios*/
+
+#todoComentarios{
+    margin: 5vh 5vw;
+
+}
+
+#todoComentarios h3 {
+    color: white;
+}
+
+
+#ComentariosFotoInfo{
+    background-color: white;
+    overflow: scroll;
+    height: 25vh;
+
+}
+
+#todoComentarios{
+    color: black;
+
+}
+
+#infoComentario{
+    display: flex;
+    margin-top: 2vh;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid  rgb(7, 102, 146);
+}
+
+#todoComentarios input {
+    width: 50vw;
+}
+#inputybutton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+#inputybutton button{
+margin-bottom: 2vh;
+}
+
+#infoComentario h4 {
+    font-size: 2vw;
+    color: black;
+}
+
+#infoComentario p{
+    font-size: 1.5vw;
+    color: black;
+
+
+} 
+
+#usuarioYComentario{
+        width:40vw;
+    }
+    
+
+
+#todoComentarios #eliminarYmodificar {
+    display: flex;
+    flex-direction: column;
+}
+
+#todoComentarios #eliminarYmodificar button, #usuarioYComentario button {
+    border: 1px solid rgb(white);
+    color: rgb(7, 102, 146);
+    background-color: white;
+}
+
 
 
 
@@ -244,7 +320,7 @@ height: 14vh;
 
     }
 
-    .todoTinerary button{
+    .todoTinerary button, #usuarioYComentario button{
     border: 1px solid rgb(255, 255, 255);
     background-color: rgb(7, 102, 146);
     color: white;
@@ -257,6 +333,82 @@ height: 14vh;
 
     }
 
+    /*comentarios*/
 
+    #todoComentarios{
+        margin: 5vh 5vw;
+    
+    }
+    
+    #todoComentarios h3 {
+        color: white;
+    }
+    
+    
+    #ComentariosFotoInfo{
+        background-color: white;
+        overflow: scroll;
+        height: 25vh;
+    
+    }
+    
+    #todoComentarios{
+        color: black;
+    
+    }
+    
+    #infoComentario{
+        display: flex;
+        margin-top: 2vh;
+        padding-bottom: 2vh;
+        border-bottom: 1px solid  rgb(7, 102, 146);
+    }
+    
+    #infoComentario #imagenTinerary{
+        width: 8vw!important;
+        height:8vw!important;
+    }
+
+    #todoComentarios input {
+        width: 50vw;
+    }
+    #inputybutton {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2vh;
+    }
+    
+    #inputybutton button{
+    margin-bottom: 2vh;
+    width: 30vw;
+
+    }
+    
+    #infoComentario h4 {
+        font-size: 2vw;
+        color: black;
+    }
+    
+    #infoComentario p{
+        font-size: 1.5vw;
+        color: black;
+    
+    
+    } 
+
+    
+    
+    #todoComentarios #eliminarYmodificar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #todoComentarios #eliminarYmodificar button, #usuarioYComentario button {
+        border: 1px solid white;
+        color: rgb(7, 102, 146);
+        background-color: white;
+    }
+    
 }
 

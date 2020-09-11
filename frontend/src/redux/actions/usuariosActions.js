@@ -13,13 +13,16 @@ const usuariosActions = {
                dispatch({
                 type: 'LOG_USUARIO',
                 payload: {
-                   user: respuesta.data.user,
+                   token: respuesta.data.token,
+                   foto: respuesta.data.foto,
+                   usuario: respuesta.data.usuario,
                    success: respuesta.data.success
                 }
             })
             }    
        }
     },
+
 
     loguearUsuario: usuario => {
       return async (dispatch, getState) => {
@@ -30,13 +33,15 @@ const usuariosActions = {
             dispatch({
                type: 'LOG_USUARIO',
                payload: {
-                  user: respuesta.data.user,
+                  token: respuesta.data.token,
+                  usuario: respuesta.data.usuario,
+                  foto: respuesta.data.foto,
                   success: respuesta.data.success
+
                }
            })
          }
       }
-
     },
 
     desloguearUsuario: () => {
@@ -45,7 +50,27 @@ const usuariosActions = {
             type: 'DESLOGUEAR'
       })
    }
-  }
+  },
+
+  forcedLogIn: tokenLS => {
+   return async (dispatch, getState) => {
+      const respuesta = await Axios.get('http://127.0.0.1:4000/api/verificarToken', {
+         headers: {
+            Authorization: `Bearer ${tokenLS}`
+         }
+      })
+      if(respuesta.data.success){
+         dispatch({
+            type: 'LOG_USUARIO',
+            payload: {token: tokenLS, usuario: respuesta.data.usuario, foto: respuesta.data.foto, success:respuesta.data.success}
+         })
+      }
+}
+},
+
 }
 
 export default usuariosActions
+
+
+

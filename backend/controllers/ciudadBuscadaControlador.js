@@ -7,7 +7,9 @@ const ciudadBuscadaControlador = {
             success:true,
             ciudadBuscada: pedidoCiudad
         })
-    }
+    },
+
+   
 }
 
 module.exports = ciudadBuscadaControlador

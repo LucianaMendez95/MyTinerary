@@ -28,6 +28,8 @@ const ciudadesReducer = (state = initialState, action) => {
                     ciudadesFiltradas: filtrado
                 }   
             
+       
+            
 
         default:
             return state

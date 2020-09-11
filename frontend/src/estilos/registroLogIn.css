@@ -26,7 +26,24 @@ padding: 2vh 2vw;
 #divFormulario label{
     margin-right: 2vw;
 }
-#divFormulario input{
+#divFormulario input, select{
     width: 50vw;
+    height: 7vh;
+}
+
+
+
+#divFormulario button{
+    padding: 1px!important;
+    margin-bottom: 4vh;
+    padding-bottom: -3vh;
+    
 
 }
+
+#divFormulario button span  {
+margin-top: -1vh;
+padding-bottom: -1vh;
+}
+
+

@@ -8,6 +8,8 @@ const usuarioSchema = new mongoose.Schema({
     mail: {type: String, required: true},
     foto: {type: String, required: true},
     pais: {type: String, required: true, default: "Argentina"},
+    likeados: {type: Array, default: []},
+    deslikeados: {type: Array, default: []},
 
 })
 
